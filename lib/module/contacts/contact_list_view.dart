@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial2/module/contacts/contact_detail_view.dart';
+import 'package:tutorial2/widget/drawer.dart';
 import '../../data/contact_data.dart';
 import 'contact_list_presenter.dart';
 
 class ContactsPage extends StatelessWidget {
+  static const String routeName = '/contacts';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: AppDrawer(),
         appBar: AppBar(
           title: Text("Contacts"),
         ),

@@ -20,12 +20,6 @@ class RandomUserRepository implements ContactRepository {
 
     final contactsContainer = _decoder.convert(jsonBody);
     final List contactItems = contactsContainer['results'];
-    print("---------------------------");
-    print(contactItems[0]);
-    print(contactItems[0]['location']);
-    print(contactItems[0]['location']['street']);
-    print(contactItems[0]['location']['city']);
-    print("---------------------------");
 
     return contactItems
         .map((contactRaw) => Contact.fromMap(contactRaw))

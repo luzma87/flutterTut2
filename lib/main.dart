@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:tutorial2/injection/dependency_injection.dart';
-import 'package:tutorial2/module/contacts/contact_list_view.dart';
+import 'package:tutorial2/routes/Routes.dart';
+import 'module/contacts/contact_list_view.dart';
+import 'injection/dependency_injection.dart';
+import 'module/events/event_list_view.dart';
+import 'module/notes/note_list_view.dart';
 
 void main() {
   Injector.configure(Flavor.PRO);
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: new ContactsPage());
-  }
+  runApp(new MaterialApp(
+    title: 'Flutter Demo',
+    theme: new ThemeData(primarySwatch: Colors.indigo),
+    home: ContactsPage(),
+    routes: {
+      Routes.contacts: (context) => ContactsPage(),
+      Routes.events: (context) => EventsPage(),
+      Routes.notes: (context) => NotesPage(),
+    },
+  ));
 }
