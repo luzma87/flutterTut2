@@ -1,0 +1,8 @@
+{
+  "appTitle": "Example 2",
+  "helloWorld": "Hello World!",
+  "contacts": "Contacts",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  }
+}

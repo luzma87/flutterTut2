@@ -4,6 +4,8 @@ import 'package:tutorial2/widget/drawer.dart';
 import '../../data/contact_data.dart';
 import 'contact_list_presenter.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class ContactsPage extends StatelessWidget {
   static const String routeName = '/contacts';
 
@@ -12,7 +14,7 @@ class ContactsPage extends StatelessWidget {
     return Scaffold(
         drawer: AppDrawer(),
         appBar: AppBar(
-          title: Text("Contacts"),
+          title: Text(AppLocalizations.of(context).contacts),
         ),
         body: ContactList());
   }
