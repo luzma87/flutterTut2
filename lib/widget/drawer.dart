@@ -22,7 +22,10 @@ class AppDrawer extends StatelessWidget {
               text: 'Notes',
               onTap: () => Navigator.pushNamed(context, Routes.notes)),
           Divider(),
-          _createDrawerItem(icon: Icons.collections_bookmark, text: 'Steps'),
+          _createDrawerItem(
+              icon: Icons.collections_bookmark,
+              text: 'Steps',
+              onTap: () => Navigator.pushNamed(context, Routes.steps)),
           _createDrawerItem(icon: Icons.face, text: 'Authors'),
           _createDrawerItem(
               icon: Icons.account_box, text: 'Flutter Documentation'),

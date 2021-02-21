@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tutorial2/module/steps/steps_list_view.dart';
 import 'package:tutorial2/routes/Routes.dart';
 import 'module/contacts/contact_list_view.dart';
 import 'injection/dependency_injection.dart';
@@ -16,6 +17,7 @@ void main() {
       Routes.contacts: (context) => ContactsPage(),
       Routes.events: (context) => EventsPage(),
       Routes.notes: (context) => NotesPage(),
+      Routes.steps: (context) => StepsPage(),
     },
   ));
 }

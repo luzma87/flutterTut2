@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial2/widget/drawer.dart';
 
-class EventsPage extends StatelessWidget {
-  static const String routeName = '/events';
+class StepsPage extends StatelessWidget {
+  static const String routeName = '/steps';
 
   @override
   Widget build(BuildContext context) {
-    Future<void> _showMyDialog() async {
+    Future<void> _showMyDialog(title, content) async {
       return showDialog<void>(
         context: context,
         barrierDismissible: false, // user must tap button!
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('AlertDialog Title'),
+            title: Text(title),
             content: SingleChildScrollView(
               child: ListBody(
                 children: <Widget>[
                   Text('This is a demo alert dialog.'),
-                  Text('Would you like to approve of this message?'),
+                  Text(content),
                 ],
               ),
             ),
@@ -39,10 +39,24 @@ class EventsPage extends StatelessWidget {
           title: Text("Events"),
         ),
         drawer: AppDrawer(),
-        body: Center(
-            child: new ElevatedButton(
-          child: new Text("click"),
-          onPressed: _showMyDialog,
-        )));
+        body: ButtonBar(
+          children: [
+            ElevatedButton(
+                child: Text("uno"),
+                onPressed: () {
+                  _showMyDialog("title uno", "uno");
+                }),
+            ElevatedButton(
+                child: Text("dos"),
+                onPressed: () {
+                  _showMyDialog("title dos", "dos");
+                }),
+            ElevatedButton(
+                child: Text("tres"),
+                onPressed: () {
+                  _showMyDialog("title tres", "tres");
+                }),
+          ],
+        ));
   }
 }
