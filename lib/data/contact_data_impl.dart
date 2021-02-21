@@ -21,8 +21,10 @@ class RandomUserRepository implements ContactRepository {
     final contactsContainer = _decoder.convert(jsonBody);
     final List contactItems = contactsContainer['results'];
 
-    return contactItems
-        .map((contactRaw) => Contact.fromMap(contactRaw))
-        .toList();
+    var contactList =
+        contactItems.map((contactRaw) => Contact.fromMap(contactRaw)).toList();
+    contactList.sort(
+        (a, b) => a.fullName.toLowerCase().compareTo(b.fullName.toLowerCase()));
+    return contactList;
   }
 }
